@@ -1,5 +1,6 @@
 import streamlit as st
 from textblob import TextBlob
+from PIL import Image
 from googletrans import Translator
 
 translator = Translator()
@@ -28,6 +29,8 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
         x = round(blob.sentiment.polarity, 2)
         if x >= 0.5:
             st.write('Es un sentimiento Positivo 😊')
+            image = Image.open('emoji.jpg')
+            st.image(image)
         elif x <= -0.5:
             st.write('Es un sentimiento Negativo 😔')
         else:
