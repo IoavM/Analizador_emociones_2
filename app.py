@@ -20,7 +20,6 @@ with st.sidebar:
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     text1 = st.text_area('Escribe por favor:')
     if text1:
-        text2 = text1.lower()
         translation = translator.translate(text2, src="es", dest="en")
         trans_text = translation.text
         blob = TextBlob(trans_text)
