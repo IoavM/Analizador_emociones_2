@@ -32,7 +32,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             image = Image.open('emoji.jpg')
             st.image(image)
             
-        elif x <= -0.5:
+        elif x <= -0.5 and texto1=='Hambriento':
             st.write('Es un sentimiento Negativo 😔')
             image = Image.open('triste.png')
             st.image(image)
