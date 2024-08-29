@@ -20,7 +20,8 @@ with st.sidebar:
 with st.expander('Analizar Polaridad y Subjetividad en un texto'):
     text1 = st.text_area('Escribe por favor:')
     if text1:
-        translation = translator.translate(text1, src="es", dest="en")
+        text2 = text1.lower()
+        translation = translator.translate(text2, src="es", dest="en")
         trans_text = translation.text
         blob = TextBlob(trans_text)
         
@@ -32,7 +33,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             image = Image.open('emoji.jpg')
             st.image(image)
             
-        elif x <= -0.5 or text1 == 'Hambriento':
+        elif x <= -0.5 or text2 == 'Hambriento' or '':
             st.write('Es un sentimiento Negativo 😔')
             image = Image.open('triste.png')
             st.image(image)
