@@ -38,7 +38,7 @@ with st.expander('Analizar Polaridad y Subjetividad en un texto'):
             st.image(image)
         else:
             st.write('Es un sentimiento Neutral 😐')
-            image = Image.open('serio.jpg')
+            image = Image.open('serio.jpeg')
             st.image(image)
             
 
